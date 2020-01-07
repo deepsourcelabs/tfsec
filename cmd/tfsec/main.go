@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -24,6 +26,7 @@ func init() {
 	rootCmd.Flags().BoolVar(&disableColours, "no-colour", disableColours, "Disable coloured output")
 	rootCmd.Flags().BoolVar(&disableColours, "no-color", disableColours, "Disable colored output (American style!)")
 	rootCmd.Flags().BoolVarP(&showVersion, "version", "v", showVersion, "Show version information and exit")
+	rootCmd.Flags().String("format", " ", "Specify format of the output. (Available value is json)")
 }
 
 func main() {
@@ -52,6 +55,7 @@ var rootCmd = &cobra.Command{
 
 		var dir string
 		var err error
+		format, _ := cmd.Flags().GetString("format")
 		if len(args) == 1 {
 			dir, err = filepath.Abs(args[0])
 		} else {
@@ -69,6 +73,25 @@ var rootCmd = &cobra.Command{
 		}
 
 		results := scanner.New().Scan(blocks)
+		if format == "json" {
+			// Even if there are no issues, encode results to json.
+			if results == nil {
+				// nil slice encodes as the `null` JSON value.
+				// This happens when no terraform files are found. ( Their design. Duh!)
+				// we want the value to be just []
+				// so, we will explicitely set results to an empty slice of `scanner.Result`
+				results = []scanner.Result{}
+			}
+			jsonResults, err := json.Marshal(results)
+			if err != nil {
+				log.Println(err)
+				os.Exit(1)
+			}
+			// display the json results at stdout
+			fmt.Println(string(jsonResults))
+			// Exit 0 as there were no exceptions while running the analyzer.
+			os.Exit(0)
+		}
 		if len(results) == 0 {
 			terminal.PrintSuccessf("\nNo problems detected!\n")
 			os.Exit(0)
