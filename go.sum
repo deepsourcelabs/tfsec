@@ -132,6 +132,8 @@ github.com/kylelemons/godebug v0.0.0-20170820004349-d65d576e9348/go.mod h1:B69LE
 github.com/kylelemons/godebug v1.1.0/go.mod h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=
 github.com/liamg/clinch v1.0.0 h1:aosNVeFi8AuANjhN4HYvasc114aSoVMUngHDcpHguas=
 github.com/liamg/clinch v1.0.0/go.mod h1:83WI5uRyhLvvFyVNfpaiRolgZx1VC052auGIQua5vmA=
+github.com/liamg/clinch v1.3.0 h1:j4xxabK067IqlLYWjuwV5tZhHAEDALm7+CTeogFbB00=
+github.com/liamg/clinch v1.3.0/go.mod h1:+fHm5APaJ9Pl3lxq+AcaNUgDlrC+LWhgCN6OYmZceR4=
 github.com/liamg/tml v0.0.0-20190502192031-c30729dfe5e5 h1:iz+peE7wU1zhq47beJqz1lM+SCR+iR0FNX9E4CHittk=
 github.com/liamg/tml v0.0.0-20190502192031-c30729dfe5e5/go.mod h1:0h4EAV/zBOsqI91EWONedjRpO8O0itjGJVd+wG5eC+E=
 github.com/liamg/tml v0.1.0 h1:PHVrqb4NcgC/e2EK8yLXBUONlbS3n1/NGUDcPQiTwKo=
@@ -159,6 +161,7 @@ github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/9
 github.com/pelletier/go-toml v1.6.0/go.mod h1:5N711Q9dKgbdkxHL+MEfF31hpT7l0S0s/t2kKREewys=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pkg/term v0.0.0-20190109203006-aa71e9d9e942/go.mod h1:eCbImbZ95eXtAUIbLAuAVnBnwf83mjf6QIVH8SHYwqQ=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_golang v0.9.1/go.mod h1:7SWBe2y4D6OKWSNQJUaRYU/AaXPKyh/dDVn+NZz0KFw=
